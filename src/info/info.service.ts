@@ -1,11 +1,14 @@
 import { Injectable, OnModuleInit } from "@nestjs/common";
+import { getInfo } from "./class/getInfo";
 
 const si = require('systeminformation')
 
 @Injectable()
 export class infoService implements OnModuleInit {
     async onModuleInit() {
-        return si.system().then(data => console.log(data));
+        const getInfoInstance = new getInfo();
+
+        return await getInfoInstance.get();
     }
 
     async get() {
