@@ -1,17 +1,30 @@
-const si = require('systeminformation')
+const si = require('systeminformation');
 
-export class info {
+export class Info {
     async get() {
+       
+        const systemInfo = await si.system();
+        const cpuInfo = await si.cpu();
+        const memory = await si.mem();
+        const memoryLayout = await si.memLayout();
+        const osInfo = await si.osInfo();
+        const diskLayout = await si.diskLayout();
+        const networkInterfaces = await si.networkInterfaces('default');
 
-        const systemInfo = si.system()
-        const cpuInfo = si.cpu()
-        const memory = si.mem()
-        const memoryLayout = si.memLayout()
-        const osInfo = si.osInfo()
-        const diskLayout = si.diskLayout()
-        // const networkInterfaces = si.networkInterfaces()
-        const networkInterfaces = si.networkInterfaces('default')
+        
+        const systemData = {
+            system: systemInfo,
+            cpu: cpuInfo,
+            memory: memory,
+            memoryLayout: memoryLayout,
+            os: osInfo,
+            diskLayout: diskLayout,
+            networkInterfaces: networkInterfaces,
+        };
 
-        return networkInterfaces.then(data => console.log(data));
+        
+        console.log(systemData);
+
+        return systemData; 
     }
 }
