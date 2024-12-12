@@ -5,7 +5,6 @@ export type SystemInfoDto = {
         version: string;
         serial: string;
         uuid: string;
-        sku: string;
     };
     cpu: {
         manufacturer: string;
@@ -33,9 +32,6 @@ export type SystemInfoDto = {
         manufacturer: string;
         partNum: string;
         serialNum: string;
-        voltageConfigured: number;
-        voltageMin: number;
-        voltageMax: number;
     }>;
     os: {
         platform: string;
@@ -45,7 +41,7 @@ export type SystemInfoDto = {
         kernel: string;
         arch: string;
         hostname: string;
-        fqdn: string;
+        serial: string;
     };
     diskLayout: Array<{
         type: string;
@@ -53,11 +49,6 @@ export type SystemInfoDto = {
         vendor: string;
         size: number;
         bytesPerSector: number;
-        totalCylinders: number;
-        totalHeads: number;
-        totalSectors: number;
-        totalTracks: number;
-        sectorsPerTrack: number;
         firmwareRevision: string;
         serialNum: string;
         interfaceType: string;

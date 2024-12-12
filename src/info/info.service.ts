@@ -1,5 +1,5 @@
 import { Injectable, OnModuleInit } from "@nestjs/common";
-import { Info } from "./class/getInfo";
+import { Info } from "./class/getInfo.class";
 
 const si = require('systeminformation')
 
