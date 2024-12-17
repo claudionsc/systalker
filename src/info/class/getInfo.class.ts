@@ -10,6 +10,10 @@ import { os } from "./os.class";
 import { system } from "./system.class";
 
 export class Info {
+
+    constructor(
+        
+    ){}
     async get() {
        
         const systemInfo = new system;
@@ -32,7 +36,7 @@ export class Info {
         };
 
         
-        console.log(systemData);
+        console.log('dados inseridos', systemData);
 
         return systemData; 
     }

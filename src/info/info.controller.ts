@@ -1,12 +1,16 @@
 import { Controller, Get } from "@nestjs/common";
-import { infoService } from "./info.service";
+import { infoServiceCommand } from "./info.service";
+import { infoServiceQuery } from "./info.service";
 
-@Controller()
+@Controller('system')
 export class InfoController {
-    constructor(private readonly infoService: infoService){}
+    constructor(
+        // private readonly infoServiceCommand: infoServiceCommand,
+        private readonly infoServiceQuery: infoServiceQuery,
+        ){}
 
     @Get()
     async findAll(): Promise<any>{
-        return this.infoService.get()
+        return this.infoServiceQuery.findAll()
     }
 }
