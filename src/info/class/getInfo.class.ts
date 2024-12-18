@@ -36,7 +36,7 @@ export class Info {
         };
 
         
-        console.log('dados inseridos', systemData);
+        // console.log('dados inseridos', systemData);
 
         return systemData; 
     }

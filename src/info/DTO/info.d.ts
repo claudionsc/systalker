@@ -54,11 +54,11 @@ export type SystemInfoDto = {
         interfaceType: string;
         smartStatus: string;
     }>;
-    networkInterfaces: {
+    networkInterfaces: Array<{
         iface: string;
         ip4: string;
         ip6: string;
         mac: string;
         internal: boolean;
-    };
+    }>;
 }
