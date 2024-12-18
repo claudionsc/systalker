@@ -168,12 +168,11 @@ export class infoServiceCommand implements OnModuleInit {
     const infoInstance = new Info();
     const infoData = await infoInstance.get();
 
-    const count = await this.InfoModel.count();
-    if (count === 0) {
+    try {
       console.log('Inicializando dados padrão...');
       await this.infoSeeder.seedDatabase(infoData); 
-    } else {
-      console.log('Dados já existentes no banco.');
+    } catch(err) {
+      console.log('Dados já existentes no banco.', err);
     }
   }
 
