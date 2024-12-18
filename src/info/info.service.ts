@@ -176,6 +176,16 @@ export class infoServiceCommand implements OnModuleInit {
       console.log('Dados já existentes no banco.');
     }
   }
+
+  async delete(id: number): Promise<void>{
+    try{
+      await this.InfoModel.destroy({
+        where: {id}
+      })
+    }catch(error){
+      console.log('Não foi possível deletar', error)
+    }
+  }
 }
 
 
